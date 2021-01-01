@@ -23,9 +23,8 @@ const films = document.querySelector(`.promo__interactive-list`);
 
 films.querySelectorAll(`.promo__interactive-item`).forEach(item => item.remove());
 advInside.forEach(item => item.remove());
-genre.remove();
-promo.insertAdjacentHTML(`afterbegin`, `<div class="promo__genre">драма</div>`);
-promo.style.cssText = `background: url('../img/bg.jpg') center no-repeat`;
+genre.textContent = `драма`;
+promo.style.backgroundImage = `url('../img/bg.jpg')`;
 
 const movieDB = {
     movies: [
@@ -36,6 +35,8 @@ const movieDB = {
         "Скотт Пилигрим против..."
     ]
 };
+
+
 
 for (let i = 0; i < movieDB.movies.length; i++) {
     films.insertAdjacentHTML(`beforeend`, `<li class="promo__interactive-item">${i+1} ${movieDB.movies[i]}
